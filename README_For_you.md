@@ -39,8 +39,7 @@ Critères d’acceptation :
 -	Le panier affiche la liste complète de produit avec : le nom du produits, la quantité, le prix total pour chaque produit. 
 -	Si le panier est vide un message informant que le panier est vide est affiché. 
 
-
-
+--------------------------------------------------------------------------------------------------------------------------
 
 3.	Ajouter des fonctionnalités (minimum 3) en BDD
 
@@ -77,3 +76,41 @@ Critères d'acceptation :
 -	Calcul des frais de livraison en fonction du poids de la commande → Ce critère est couvert dans le code avec la méthode calculate_shipping_cost, où les frais de livraison sont calculés en fonction du poids (weight_rate * total_weight).
 
 -	Livraison gratuite pour les commandes supérieures à un certain montant → Ce critère est pris en compte dans la même méthode, avec une vérification que si le total de la commande dépasse free_shipping_threshold, la livraison devient gratuite (frais de livraison = 0).
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+5. Écrire les users stories de la classe Order sur le code existant
+
+a)  Passer une commande
+
+En tant que client,
+Je veux pouvoir passer une commande en vérifiant que mon panier n'est pas vide,
+Afin de pouvoir acheter les produits que j'ai ajoutés à mon panier.
+
+Critères d'acceptation :
+
+- L'utilisateur ne peut pas passer de commande si le panier est vide.
+- Les produits du panier sont correctement enregistrés et leur stock est mis à jour.
+- Le total de la commande est calculé et affiché après la commande.
+
+
+b) Afficher le contenu de la commande
+
+En tant que client,
+Je veux pouvoir consulter le contenu de ma commande avant la validation,
+Afin de vérifier que tous les produits et quantités sont corrects.
+
+Critères d'acceptation :
+
+- L'utilisateur peut voir la liste des produits dans sa commande, incluant le nom du produit et la quantité.
+- Le total de la commande est affiché de manière claire.
+
+c) Vérifier si la commande a bien été passée
+
+En tant que client,
+Je veux être informé que ma commande a été passée avec succès,
+Afin de savoir que mes produits ont bien été réservés et que le paiement peut être effectué.
+Critères d'acceptation :
+
+- Un message de confirmation est retourné une fois la commande passée, indiquant le succès de l'opération.
+- Le message de confirmation inclut le montant total de la commande.
