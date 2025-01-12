@@ -1,4 +1,4 @@
-# product.py
+#product.py
 
 class Product:
     def __init__(self, name: str, price: float, stock: int):

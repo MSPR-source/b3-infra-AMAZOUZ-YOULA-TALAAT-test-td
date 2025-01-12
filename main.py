@@ -1,8 +1,9 @@
 # main.py
 
+
 from product import Product
 from cart import Cart
-from order10 import order10
+from order import Order
 
 def main():
     # Create products
@@ -23,17 +24,17 @@ def main():
     print("Cart:")
     print(cart.display_cart())
 
-    # Place an order10
+    # Place an order
     try:
-        order10 = order10(cart)
-        print("\norder10:")
-        print(order10.view_order10())
-        print(order10.place_order10())
+        order = Order(cart)
+        print("\norder:")
+        print(order.view_order())
+        print(order.place_order())
     except ValueError as e:
         print(f"Error: {e}")
 
     # Check remaining stock
-    print("\nStock after order10:")
+    print("\nStock after order:")
     print(p1)
     print(p2)
     print(p3)
